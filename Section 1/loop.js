@@ -1,7 +1,13 @@
-for(let i=100;i<=350;i++)
+// for(let i=100;i<=350;i++)
+// {
+//     if(i%7===0 || i%11===0)
+//     {
+//         console.log(i);
+//     }
+// }
+
+const fruits=['appple','lichi','guava','grapes']
+for(let f of fruits)
 {
-    if(i%7===0 || i%11===0)
-    {
-        console.log(i);
-    }
+    console.log(f);
 }
