@@ -15,7 +15,7 @@ section{
     font-size:48px;
 }
 footer{
-    padding: 100px 200px;
+    padding: 50px 200px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 10px;
