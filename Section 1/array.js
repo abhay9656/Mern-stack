@@ -18,3 +18,10 @@ console.log(movie);
 
 movie.shift()
 console.log(movie)
+
+movie.splice(3,0,'Batman','superman')//remove all elements starting from index 2
+console.log(movie);
+
+for(let mov of movie){
+    console.log(mov);
+}
