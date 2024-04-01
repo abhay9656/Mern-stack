@@ -15,3 +15,4 @@ else
 {
     console.log("not a prime number");
 }
+
