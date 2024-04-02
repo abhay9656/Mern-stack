@@ -1,7 +1,11 @@
-// let para=[2,3,4,5,6,77,8]
 
-// let s=0;
-// function(para){
-//   s=s+para
-//   console.log(s);
-// }
+let s=0
+function sum (a,b){
+    for(let i=a;i<=b;i++)
+    {
+        s=s+i
+    }
+    return s
+}
+
+console.log(sum(10,20));
