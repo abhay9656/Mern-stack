@@ -8,3 +8,15 @@ const obj={
 
 console.log(obj);
 console.log(obj.email);
+console.log(obj['password']);
+
+let key="name"
+console.log(obj[key]);
+
+obj.password="hello"
+console.log(obj);
+obj.address="lucnow"
+console.log(obj);
+
+console.log( Object.keys(obj) );
+console.log( Object.values(obj));
