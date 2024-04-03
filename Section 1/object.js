@@ -22,10 +22,21 @@
 // console.log( Object.values(obj));
 
 
-const smartphone={
-    brand:"Samsung",
-    model:'S24',
-    price:120000,
-    color:['white','black','blue']
-}
-console.log(smartphone);
+// const smartphone={
+//     brand:"Samsung",
+//     model:'S24',
+//     price:120000,
+//     color:['white','black','blue']
+// }
+// console.log(smartphone.color[1][3]);
+
+
+const phonearray=[
+    {
+        brand:"Samsung",
+        model:'S24',
+        price:120000,
+        color:['white','black','blue']   
+    }
+]
+console.log(phonearray[0].model);
