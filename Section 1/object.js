@@ -36,7 +36,29 @@ const phonearray=[
         brand:"Samsung",
         model:'S24',
         price:120000,
-        color:['white','black','blue']   
+        color:['white','black','graphite']   
+    },
+    {
+        brand:"Apple",
+        model:'iphone 15',
+        price:12000,
+        color:['black','blue']   
+    },
+    {
+        brand:"Realme",
+        model:'narzo',
+        price:1200,
+        color:['green','black','blue']   
+    },
+    {
+        brand:"Samsung",
+        model:'Z-fold',
+        price:164000,
+        color:['gray','black','green']   
     }
 ]
-console.log(phonearray[0].model);
+phonearray[3].color[0]="olive"
+console.log(phonearray);
+console.log(phonearray[2].model);
+console.log(phonearray[3].price);
+console.log(phonearray.length);
