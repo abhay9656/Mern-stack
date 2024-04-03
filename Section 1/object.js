@@ -57,7 +57,7 @@ const phonearray=[
         color:['gray','black','green']   
     }
 ]
-phonearray[3].color[0]="olive"
+phonearray[3].color.push("olive")
 console.log(phonearray);
 console.log(phonearray[2].model);
 console.log(phonearray[3].price);
