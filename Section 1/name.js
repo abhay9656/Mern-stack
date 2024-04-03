@@ -4,7 +4,10 @@ const name=['adarsh','shaurya','avijeet','yash','atul','arpit']
 console.log(name.length);
 let len=name.length
 
-if(len>5)
+for(let n of name)
 {
-    console.log(name);
+    if(n.length>5)
+    {
+        console.log(n);
+    }
 }
