@@ -41,3 +41,11 @@ const len=name.filter((na)=>{
     return na.length>5
 })
 console.log(len);
+
+const strPrice=['$56.90','$80.892','$191.6','$90.8','$120.9']
+// console.log(parseInt('$7.82'.slice(1)));
+
+const pric=strPrice.map((n)=>{
+   return parseInt(n.slice(1,4))
+})
+console.log(pric);
