@@ -26,3 +26,18 @@ const even= num.filter((n)=>{
    return n%2===0
 })
 console.log(even);
+
+
+const price =[350,1400,900,2800,3200,800,120]
+
+const fil=price.filter((n)=>{
+   return n>800&&n<1500
+})
+console.log(fil);
+
+const name=['adarsh','shaurya','avijeet','yash','atul','arpit']
+
+const len=name.filter((na)=>{
+    return na.length>5
+})
+console.log(len);
