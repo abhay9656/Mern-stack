@@ -30,7 +30,13 @@ const phonearray=[
 // })
 // console.log(fil);
 
-const col=phonearray.filter((cl)=>{
-    return cl.color.includes("blue")
+// const col=phonearray.filter((cl)=>{
+//     return cl.color.includes("blue")
+// })
+// console.log(col);
+
+const brand=phonearray.map((br)=>{
+  
+    return br.brand
 })
-console.log(col);
+console.log(new Set(brand));
