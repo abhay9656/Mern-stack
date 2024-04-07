@@ -36,7 +36,6 @@ const phonearray=[
 // console.log(col);
 
 const brand=phonearray.map((br)=>{
-  
     return br.brand
 })
 console.log(new Set(brand));
