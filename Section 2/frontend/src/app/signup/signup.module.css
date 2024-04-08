@@ -1,39 +1,66 @@
 /* styles/SignupPage.module.css */
-.img{
-  background-image: url('https://www.peeayecreative.com/wp-content/uploads/2020/08/sfgsgdd.jpg');
-    background-size: cover; 
-    background-position: center;
-    padding: 100px;
-}
+
 .container {
-    width: 400px;
-    margin: 100px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-  
-  }
-  
-  .input {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  .button {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  .button:hover {
-    background-color: #0056b3;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to left, white, lightgray);
+}
+
+.main {
+  width: 50%;
+  height: 500px;
+  border: none;
+  display: flex;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.img {
+  width: 50%;
+  height: 500px;
+  background-image: url("https://unblast.com/wp-content/uploads/2021/09/University-Students-Illustration.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+.sign {
+  width: 50%;
+  height: 500px;
+}
+
+.page {
+  display: flex;
+  margin-top: 150px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input,
+.password {
+  position: relative;
+}
+
+.inp {
+  background-color: rgb(218, 210, 210);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.btnPrimary {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.btnPrimary:hover {
+  background-color: #0056b3;
+}

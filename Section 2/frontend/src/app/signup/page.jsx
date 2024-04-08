@@ -1,14 +1,26 @@
 import React from 'react'
-import classes from './signup.module.css'
+import styles from './signup.module.css'
 const Signup = () => {
   return (
-    <div className={classes.img}>
-      <div className={classes.container}>
-      <h2 style={{textAlign:'center'}}>Signup Page</h2>
-      <input className={classes.input} type="text" placeholder="Username" />
-      <input className={classes.input} type="password"  placeholder="Password"  />
-      <input className={classes.input} type="email" placeholder="Email Address"/>
-      <button className={classes.button}>Signup</button>
+    <div>
+       <div className={styles.container}>
+       <div className={styles.main}>
+        <div className={styles.img}></div>
+        <div className={styles.sign}>
+          <div className={styles.page}>
+            <h2>Sign up</h2>
+            <div className={styles.input}>
+              <input className={styles.inp} type="text" placeholder="Enter your Username" />
+            </div>
+            <div className={styles.password}>
+              <input className={styles.inp} type="password" placeholder="Enter your password" />
+            </div>
+            <button className={ styles.btnPrimary}  type="submit">
+              Sign up
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
     </div>
   )
