@@ -3,8 +3,12 @@ import classes from './login.module.css'
 const Login = () => {
   return (
     <div>
-      <h1 className={classes.text}>Login</h1>
-      <button className={classes.loginBtn}>Login Button</button>
+      <div className={classes.container}>
+      <h1 style={{textAlign:'center'}}>Login Page</h1>
+      <input className={classes.input} type="text"  placeholder="Username"   />
+      <input className={classes.input}  type="password"  placeholder="Password"  />
+      <button className={classes.button} >Login</button>
+    </div>
     </div>
   )
 }
