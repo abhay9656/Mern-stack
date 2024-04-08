@@ -2,7 +2,7 @@ import React from 'react'
 import classes from './login.module.css'
 const Login = () => {
   return (
-    <div>
+    <div className={classes.image}>
       <div className={classes.container}>
       <h1 style={{textAlign:'center'}}>Login Page</h1>
       <input className={classes.input} type="text"  placeholder="Username"   />

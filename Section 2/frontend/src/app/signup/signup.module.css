@@ -1,18 +1,18 @@
-.image{
-    background-image: url('https://static.vecteezy.com/system/resources/previews/001/991/652/original/sign-in-page-flat-design-concept-illustration-icon-account-login-user-login-abstract-metaphor-can-use-for-landing-page-mobile-app-ui-posters-banners-free-vector.jpg');
+/* styles/SignupPage.module.css */
+.img{
+  background-image: url('https://www.peeayecreative.com/wp-content/uploads/2020/08/sfgsgdd.jpg');
     background-size: cover; 
     background-position: center;
-    padding: 120px;
+    padding: 100px;
 }
-
 .container {
     width: 400px;
     margin: 100px auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f9f9f987;
-    backdrop-filter: blur(20px);
+    background-color: #f9f9f9;
+  
   }
   
   .input {
@@ -21,7 +21,8 @@
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
-  } 
+  }
+  
   .button {
     width: 100%;
     padding: 10px;
