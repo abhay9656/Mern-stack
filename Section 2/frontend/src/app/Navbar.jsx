@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 const Navbar = () => {
   return (
-    <div>
+    <div style={{marginBottom:'100px'}}>
      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div className="container-fluid">
     <a className="navbar-brand" href="#">
