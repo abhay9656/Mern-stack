@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from './Navbar';
 
 const Template = ({children}) => {
     useEffect(() => {
@@ -10,6 +11,7 @@ const Template = ({children}) => {
 
   return (
     <div>
+      <Navbar/>
     {children}
     </div>
   );

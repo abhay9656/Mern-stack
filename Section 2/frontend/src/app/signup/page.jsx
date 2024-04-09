@@ -18,7 +18,7 @@ const Signup = () => {
             <div className={styles.password}>
               <input className={styles.inp} type="email" placeholder="Enter your Email" />
             </div>
-            <button className={ styles.btnPrimary}  type="submit">
+            <button className={ styles.btnPrimary} type="submit">
               Sign up
             </button>
           </div>
