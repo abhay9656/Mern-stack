@@ -25,10 +25,10 @@ const phonearray=[
     }
 ]
 
-// const fil=phonearray.filter((pri)=>{
-//           return pri.brand==="Samsung"
-// })
-// console.log(fil);
+const fil=phonearray.filter((pri)=>{
+          return pri.color==="green"
+})
+console.log(fil);
 
 // const col=phonearray.filter((cl)=>{
 //     return cl.color.includes("blue")
