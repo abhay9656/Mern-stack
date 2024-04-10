@@ -2,8 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 const Navbar = () => {
   return (
-    <div style={{marginBottom:50}}>
-     <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div >
+     <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
   <div className="container-fluid">
     <a className="navbar-brand" href="#">
       Navbar
