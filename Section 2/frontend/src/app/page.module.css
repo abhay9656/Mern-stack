@@ -1,7 +1,12 @@
 .link{
     text-decoration:underline;
     margin: 0;
+    color: #fff;
 }
 .bg{
-    background-color: aqua;
+    background-image: url("https://www.freecodecamp.org/news/content/images/2022/09/jonatan-pie-3l3RwQdHRHg-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 290px;
 }
