@@ -7,7 +7,7 @@ const Page = () => {
        Eventhandling
 
        <hr />
-       <button className='btn btn-success' onClick={ ()=>{ alert('button was clicked') } }>Click</button>
+       <button className='btn btn-success ms-4' onClick={ ()=>{ alert('button') } }>Click</button>
     </div>
   );
 }
