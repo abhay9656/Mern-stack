@@ -25,7 +25,14 @@ const Todo = () => {
                 <input onKeyDown={addtask} type="text" className='form-control border-primary border-2'/>
             </div>
             <div className="card-body">
-                
+                {
+                    todolist.map( (todo)=>{
+                        return <div>
+                            <p>{todo.task}</p>
+                            <button className='btn btn-danger'>Delete</button>
+                        </div>
+                    } )
+                }
             </div>
         </div>
     </div>
