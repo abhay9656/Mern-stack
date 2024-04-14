@@ -7,7 +7,7 @@ const Home = () => {
     <div className={classes.bg}>
         <h1 className={classes.link} style={{ textAlign:'center',fontSize:60 }}>Welcome page
         </h1>
-        <button><IconLogin size={30} color='gray'/>  Click</button>
+        <button className='btn btn-primary ms-5'><IconLogin size={30} color='white'/>  Click</button>
     </div>
   );
 }
