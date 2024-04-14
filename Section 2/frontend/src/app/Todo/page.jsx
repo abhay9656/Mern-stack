@@ -6,7 +6,8 @@ const Todo = () => {
      const [todolist, setTodolist] = useState([
         { task:'Do homeWork',completed:false },
         { task:'Eat',completed:false },
-        { task:'watch movies',completed:false }
+        { task:'watch movies',completed:false },
+        { task:'play games',completed:false }
      ])     
     const addtask=(e)=>{
         if(e.code ==='Enter'){
@@ -27,7 +28,7 @@ const Todo = () => {
             <div className="card-body">
                 {
                     todolist.map( (todo)=>{
-                        return <div>
+                        return <div className='d-flex justify-content-between p-3'>
                             <p>{todo.task}</p>
                             <button className='btn btn-danger'>Delete</button>
                         </div>
