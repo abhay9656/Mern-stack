@@ -12,8 +12,15 @@ const Todo = () => {
     const addtask=(e)=>{
         if(e.code ==='Enter'){
             console.log(e.target.value);
+
+            setTodolist( [...todolist,{task:e.target.value,completed:false}]);
+            e.target.value=''
         }
        
+    }
+
+    const deteteTask=(index)=>{
+        console.log(index);
     }
 
 
@@ -30,7 +37,7 @@ const Todo = () => {
                     todolist.map( (todo)=>{
                         return <div className='d-flex justify-content-between p-3'>
                             <p>{todo.task}</p>
-                            <button className='btn btn-danger'>Delete</button>
+                            <button onClick={deteteTask} className='btn btn-danger'>Delete</button>
                         </div>
                     } )
                 }
