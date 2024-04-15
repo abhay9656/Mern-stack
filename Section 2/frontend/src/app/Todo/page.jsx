@@ -4,10 +4,10 @@ import React, { useState } from 'react';
 const Todo = () => {
 
      const [todolist, setTodolist] = useState([
-        { task:'Do homeWork',completed:false },
-        { task:'Eat',completed:false },
-        { task:'watch movies',completed:false },
-        { task:'play games',completed:false }
+        // { task:'Do homeWork',completed:false },
+        // { task:'Eat',completed:false },
+        // { task:'watch movies',completed:false },
+        // { task:'play games',completed:false }
      ])     
     const addtask=(e)=>{
         if(e.code ==='Enter'){
@@ -21,6 +21,16 @@ const Todo = () => {
 
     const deteteTask=(index)=>{
         console.log(index);
+        const temp=todolist
+        temp.splice(index,1)
+        setTodolist([...temp]);
+    }
+
+    const finishTask=(index)=>{
+        const temp=todolist;
+        temp[index].completed= !temp[index].completed;
+        console.log(temp)
+        setTodolist([...temp]);
     }
 
 
@@ -34,10 +44,24 @@ const Todo = () => {
             </div>
             <div className="card-body">
                 {
-                    todolist.map( (todo)=>{
-                        return <div className='d-flex justify-content-between p-3'>
+                    todolist.map( (todo,index)=>{
+                        return <div className='d-flex justify-content-between align-item-center p-3'>
                             <p>{todo.task}</p>
-                            <button onClick={deteteTask} className='btn btn-danger'>Delete</button>
+
+                            {todo.completed ?
+                            <span className='badge bg-success'>Completed</span>
+                            :
+                            <span className='badge bg-warning'>Pending</span>
+                            }
+
+                            <div>
+                            <button onClick={()=>{finishTask(index)}} className='btn btn-primary me-3'>
+
+                            {todo.completed ? "undo" : "pending"}
+                            
+                            </button>
+                            <button onClick={ ()=>{deteteTask(index)} } className='btn btn-danger'>Delete</button>
+                            </div>
                         </div>
                     } )
                 }
