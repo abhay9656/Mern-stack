@@ -12,8 +12,7 @@ const Chat = () => {
           <div className="message receiver">I'm good, thank you!</div>
         </div>
         <div className={styles.chatinput}>
-          <input type="text" placeholder="Type your message..." />
-          <button>Send</button>
+          <input className={styles.input} type="text" placeholder="Type your message..." />
         </div>
       </div>
     </div>
