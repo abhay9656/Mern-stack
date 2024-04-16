@@ -2,6 +2,17 @@
 import React from 'react'
 import styles from './signup.module.css'
 import { useFormik } from 'formik'
+import * as Yup from 'yup';
+
+const SignupSchema = Yup.object().shape({
+  name:Yup.string().min(4,'Too short').required('Required'),
+  email: Yup.string().email('Invalid email').required('Required'),
+  password:Yup.string().required('password is required').min(6,"too small")
+});
+
+
+
+
 const Signup = () => {
 
   
@@ -16,7 +27,9 @@ const Signup = () => {
     onSubmit:(value)=>{
       console.log(value);
 
-    }
+    },
+    validationSchema:SignupSchema
+
   })
 
   return (
