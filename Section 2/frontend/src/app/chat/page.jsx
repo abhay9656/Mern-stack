@@ -30,6 +30,7 @@ const Chat = () => {
         </div>
         <div className={styles.chatinput}>
           <input className={styles.input} onKeyDown={msg} type="text" placeholder="Type your message..." />
+          <button className='btn btn-primary'>Send</button>
         </div>
       </div>
     </div>
