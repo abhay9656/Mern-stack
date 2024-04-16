@@ -8,8 +8,11 @@ const Chat = () => {
         chat:"hello! i  m here"
     }])
 
-    const msg=()=>{
-        
+    const msg=(e)=>{
+          if(e.code==='Enter'){
+            setchat([...chat,{chat:e.target.value}])
+            e.target.value=''
+          }
     }
 
   return (
