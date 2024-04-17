@@ -1,5 +1,5 @@
 // import express
-const express = required('express')
+const express = require('express')
 
 // initialize express
 const app =express();
