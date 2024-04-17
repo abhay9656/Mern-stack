@@ -8,7 +8,11 @@ const SignupSchema = Yup.object().shape({
   name: Yup.string().min(4, 'Name pura likho').required('Naam nhi hai kya?'),
   email: Yup.string().email('Invalid email').required('Required'),
   password: Yup.string().required('Password is required')
-    .min(6, 'Too small')
+    .min(6, 'Too small').matches(/[a-z]/,'Must include lowercase letter')
+    .matches(/[A-Z]/,'Must include Uppercase letter')
+    .matches(/[0-9]/,'Must include lnumber letter')
+    .matches(/\W/,'Must include special case'),
+    confirmPassword:Yup.string().oneOf([Yup.ref('password'),null],'Password must match').required('Password is required')
 });
 
 const Signup = () => {
@@ -89,7 +93,7 @@ const Signup = () => {
                       <div class="mb-3">
                         <label for="" class="form-label">Password</label>
                         <input
-                          type="password"
+                          type="text"
                           id="password"
                           onChange={signupForm.handleChange}
                           value={signupForm.values.password}
