@@ -107,7 +107,7 @@ const Signup = () => {
                       <div class="mb-3">
                         <label for="" class="form-label">Confirm Password</label>
                         <input
-                          type="password"
+                          type="text"
                           id="confirmPassword"
                           onChange={signupForm.handleChange}
                           value={signupForm.values.confirmPassword}
