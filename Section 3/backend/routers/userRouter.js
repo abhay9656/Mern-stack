@@ -6,7 +6,7 @@ router.get('/add',(req,res)=>{
 
 });
 
-router.get('delete',(req,res)=>{
+router.get('/delete',(req,res)=>{
     res.send("Response from user delete");
 })
 module.exports=router;

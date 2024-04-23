@@ -8,7 +8,6 @@ const port =5000;
  
 //middleware
 app.use('/user',userRouter);
-// app.use('/user'.userRouter);
 
 //endpoint route
 app.get('/',(req,res)=>{
