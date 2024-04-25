@@ -26,7 +26,13 @@ const Signup = () => {
     },
     onSubmit:(value)=>{
       console.log(value);
-      fetch('http://localhost:5000/user/add')
+      fetch('http://localhost:5000/user/add',{
+        method:'POST',
+        body:JSON.stringify(value),
+        headers:{
+          'content-Type':'application/json'
+        }
+      })
     },
     validationSchema:SignupSchema
 
