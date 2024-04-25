@@ -26,7 +26,7 @@ const Signup = () => {
     },
     onSubmit:(value)=>{
       console.log(value);
-
+      fetch('http://localhost:5000/user/add')
     },
     validationSchema:SignupSchema
 
