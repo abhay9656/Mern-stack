@@ -3,6 +3,7 @@ import React from 'react'
 import styles from './signup.module.css'
 import { useFormik } from 'formik'
 import * as Yup from 'yup';
+import toast from 'react-hot-toast';
 
 const SignupSchema = Yup.object().shape({
   name:Yup.string().min(4,'Too short').required('Required'),
@@ -33,8 +34,15 @@ const Signup = () => {
       })
       .then((response) => {
         console.log(response.status);
+        if(response.status ===200)
+        {
+          toast.success('User Registration Sucessfully');
+        }else{
+          toast.error('user Registeration Failed');
+        }
       }).catch((err) => {
         console.log(err);
+        toast.error('user Registeration Failed');
       });
     },
     validationSchema:SignupSchema
