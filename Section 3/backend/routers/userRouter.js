@@ -4,7 +4,7 @@ const model = require('../models/userModels');
 
 router.post('/add',(req,res)=>{
     console.log(req.body);
-    res.send("Response from user add");
+   new Model(req.body).save()
 
 });
 
