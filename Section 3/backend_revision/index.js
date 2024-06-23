@@ -8,6 +8,7 @@ const app = express();
 const port = 5500;
 
 // middleware
+app.use(express.json());
 app.use('/user', UserRouter);
 
 // endpoint or route
