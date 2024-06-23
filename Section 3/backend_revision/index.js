@@ -1,7 +1,7 @@
 // import express
 const express = require('express');
 const UserRouter = require('./Routers/userRouter');
-const ProductRouter = require('/Routers/productRouter')
+const ProductRouter = require('./Routers/productRouter')
 // initialize express
 const app = express();
 
