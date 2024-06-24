@@ -6,4 +6,4 @@ const mySchema=new Schema({
     createdAt:{type:Date}
 })
 
-module.exports=model('product',mySchema)
+module.exports=model('feed',mySchema)
