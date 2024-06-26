@@ -15,7 +15,11 @@ router.post('/add', (req, res) => {
 
 // getall
 router.get('/getall', (req, res) => {
-    res.send('response from user getall');
+    model.find().then((result) => {
+        
+    }).catch((err) => {
+        
+    });
 });
 
 // update
