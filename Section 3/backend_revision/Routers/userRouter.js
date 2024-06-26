@@ -33,14 +33,29 @@ router.get('/getbyemail/:email',(req,res)=>{
     });
 })
 
+router.get('/getbyid/:id',(req,res)=>{
+    model.findById(req.params.id)
+    .then((result) => {
+        res.status(200).json(result)
+    }).catch((err) => {
+        res.status(500).json(err)
+    });
+})
+
 // update
 router.get('/update', (req, res) => {
     res.send('response from user update');
 });
 
 // delete
-router.get('/delete', (req, res) => {
+router.get('/delete/:id', (req, res) => {
     res.send('response from user delete');
+ model.findByIdAndDelete(req.params.id)
+.then((result) => {
+    res.status(200).json(result)
+}).catch((err) => {
+    res.status(500).json(err)
+});
 });
 
 module.exports = router;
