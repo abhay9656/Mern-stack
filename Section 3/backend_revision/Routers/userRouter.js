@@ -15,10 +15,11 @@ router.post('/add', (req, res) => {
 
 // getall
 router.get('/getall', (req, res) => {
-    model.find().then((result) => {
-        
+    model.find()
+    .then((result) => {
+        res.status(200).json(result)
     }).catch((err) => {
-        
+        res.status(500).json(err)
     });
 });
 
