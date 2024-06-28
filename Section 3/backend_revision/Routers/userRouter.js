@@ -43,8 +43,13 @@ router.get('/getbyid/:id',(req,res)=>{
 })
 
 // update
-router.get('/update', (req, res) => {
-    res.send('response from user update');
+router.get('/update/:id', (req, res) => {
+    model.findByIdAndUpdate(req.params.id,req.body)//first one is id and second one is body which we want to update
+    .then((result) => {
+        res.status(200).json(result)
+    }).catch((err) => {
+        res.status(500).json(err)
+    });
 });
 
 // delete
