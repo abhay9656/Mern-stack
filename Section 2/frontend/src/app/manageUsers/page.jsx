@@ -22,8 +22,8 @@ const MangeUsers = () => {
   return (
     <div>
       <h3 className='mt-5 text-center fw-bold'>Manage User</h3>
-      <div className='conatainer'>
-          <table className='table table-dark'>
+      <div className='container'>
+          <table className='table '>
             <thead>
                 <tr>
                 <th>Id</th>
