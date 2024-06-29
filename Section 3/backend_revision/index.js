@@ -3,11 +3,14 @@ const express = require('express');
 const UserRouter = require('./Routers/userRouter');
 const FeedRouter = require('./Routers/feedRouter');
 const ProductRouter=require('./Routers/productRouter');
+const cors =require('cors')
 // initialize express
 const app = express();
 
 const port = 5500;
-
+app.use(cors({
+    origin:'http:/localhost:3000'
+}))
 // middleware
 app.use(express.json());
 app.use('/user', UserRouter);
