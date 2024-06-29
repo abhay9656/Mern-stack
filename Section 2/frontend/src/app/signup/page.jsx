@@ -5,8 +5,48 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup';
 import toast from 'react-hot-toast';
 
+const SignupSchema = Yup.object().shape({
+  name:Yup.string().min(4,'Too short').required('Required'),
+  email: Yup.string().email('Invalid email').required('Required'),
+  password:Yup.string().required('password is required').min(6,"too small")
+});
+
+
 const Signup = () => {
 
+  
+  const signupForm=useFormik({
+    initialValues:{
+      name:'',
+      email:'',
+      password:'',
+      confirmPassword:''
+
+    },
+    onSubmit:(value)=>{
+      console.log(value);
+      fetch('http://localhost:5500/user/add',{
+        method:'post',
+        headers:{
+          'content-Type':'application/json'
+        },
+        body:JSON.stringify(value)
+      })
+      .then((respose) => {
+        console.log(respose.status);
+        if(respose===200)
+        {
+          toast.success('user registered successfully')
+        }
+      }).catch((err) => {
+        console.log(err);
+        toast.error("Something went wrong")
+      });
+
+    },
+    validationSchema:SignupSchema
+
+  })
 
   return (
     <div>
@@ -16,22 +56,30 @@ const Signup = () => {
         <div className={styles.sign}>
           <div className={styles.page}>
             <h2>Sign up</h2>
-            <form >
+            <form onSubmit={signupForm.handleSubmit}>
             <div className={styles.input}>
-              <input className={styles.inp} type="text" id='name'  placeholder="Enter your Username" />
-            
+              <input className={styles.inp} type="text" id='name' onChange={signupForm.handleChange} value={signupForm.values.name} placeholder="Enter your Username" />
+              {signupForm.touched.name && (
+                <small className='text-danger'>{signupForm.errors.name}</small>
+              )}
             </div>
             <div className={styles.password}>
-              <input className={styles.inp} type="password" id='password'  placeholder="Enter your password" />
-             
+              <input className={styles.inp} type="password" id='password' onChange={signupForm.handleChange} value={signupForm.values.password} placeholder="Enter your password" />
+              {signupForm.touched.password && (
+                <small className='text-danger'>{signupForm.errors.password}</small>
+              )}
             </div>
             <div className={styles.password}>
-              <input className={styles.inp} type="password" id='confirmPassword'   placeholder="Confirm your password " />
-             
+              <input className={styles.inp} type="password" id='confirmPassword' onChange={signupForm.handleChange} value={signupForm.values.confirmPassword} placeholder="Confirm your password " />
+              {signupForm.touched.confirmPassword && (
+                <small className='text-danger'>{signupForm.errors.confirmPassword}</small>
+              )}
             </div>
             <div className={styles.password}>
-              <input className={styles.inp} type="email" id='email'   placeholder="Enter your Email" />
-             
+              <input className={styles.inp} type="email" id='email' onChange={signupForm.handleChange} value={signupForm.values.email} placeholder="Enter your Email" />
+              {signupForm.touched.email && (
+                <small className='text-danger'>{signupForm.errors.email}</small>
+              )}
             </div>
             <button className={ styles.btnPrimary} type="submit">
               Sign up
