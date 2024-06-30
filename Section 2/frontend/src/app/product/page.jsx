@@ -18,7 +18,7 @@ const product = () => {
           fetch('http://localhost:5500/product/add',{
               method:'POST',
               headers:{
-                  'Content-Type':'application/json'
+                  'content-Type':'application/json'
               },
               body:JSON.stringify(values)
           })
