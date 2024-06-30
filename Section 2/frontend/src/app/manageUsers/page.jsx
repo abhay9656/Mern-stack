@@ -29,7 +29,9 @@ const MangeUsers = () => {
                 <th>Id</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Created At</th></tr>
+                <th>Created At</th>
+                <th colSpan={2}> Action</th>
+                </tr>
             </thead>
             <tbody>
                 {
@@ -39,7 +41,13 @@ const MangeUsers = () => {
                             <td>{user._id}</td>
                             <td>{user.name}</td>
                             <td>{user.email}</td>
-                            <td>{user.createdAt}</td>
+                            <td>{new Date(user.createdAt).toDateString()}</td>
+                            <td>
+                                <button className='btn btn-danger '>Delete</button>
+                            </td>
+                            <td>
+                            <button className='btn btn-primary'>Update</button>
+                            </td>
                         </tr>
                         )
                     })
