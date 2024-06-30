@@ -42,6 +42,16 @@ const Navbar = () => {
             chat
           </a>
         </li>
+        <li className="nav-item">
+          <a className="nav-link" href="/product">
+            product
+          </a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="/manageProduct">
+            manage product
+          </a>
+        </li>
       </ul>
       <form className="d-flex">
         <input
