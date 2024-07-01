@@ -1,11 +1,18 @@
+'use client'
+import { useParams } from 'next/navigation'
 import React from 'react'
 
+
+
 const updateUser = () => {
+  const {id}=useParams();
+
   return (
     <div>
       <div className="container mt-5">
       <h2>Update User Information</h2>
       <form >
+        {id}
         <div className="form-group">
           <label htmlFor="name">Name</label>
           <input
@@ -38,6 +45,7 @@ const updateUser = () => {
           
             required
           />
+          {id}
         </div>
         <button type="submit" className="btn btn-primary mt-4">
           Update
