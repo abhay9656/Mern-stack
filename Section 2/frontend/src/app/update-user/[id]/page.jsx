@@ -1,26 +1,42 @@
 'use client'
+import { Formik } from 'formik';
 import { useParams } from 'next/navigation'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 
 
 const updateUser = () => {
   const {id}=useParams();
+  const [userData, setuserData] = useState(null)
 
   const fetchUser=async()=>{
     const res=await fetch('http://localhost:5500/user/getbyid/'+id);
     console.log(res.status);
     const data=await res.json();
     console.log(data);
+    setuserData(data);
   }
   useEffect(()=>{
     fetchUser();
   },[])
 
+  const submitForm=()=>{}
+
   return (
     <div>
-      <div className="container mt-5">
-      <h2>Update User Information</h2>
+      <div className="container mt-5 shadow card ">
+      <h2 className='text-center'>Update User Information</h2>
+
+        {
+          userData!==null?(
+            <Formik initialValues={userData} onSubmit={submitForm}>
+               {(userFrom)=>{return()}}
+            </Formik>
+          ):(
+            <p className='fw-bold text-muted'>Loading....</p>
+          )
+        }
+
       <form >
         <div>{id}</div>
         <div className="form-group">
@@ -30,7 +46,6 @@ const updateUser = () => {
             className="form-control"
             id="name"
             name="name"
-            
             required
           />
         </div>
@@ -57,7 +72,7 @@ const updateUser = () => {
           />
           
         </div>
-        <button type="submit" className="btn btn-primary mt-4">
+        <button type="submit" className="btn btn-primary mt-4 mb-5">
           Update
         </button>
       </form>
