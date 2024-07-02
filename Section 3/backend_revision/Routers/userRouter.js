@@ -1,6 +1,9 @@
 const express = require('express');
 const model = require('../models/userModel');
 const router = express.Router();
+const jwt = require('jsonwebtoken')
+
+require('dotenv').config();
 
 router.post('/add', (req, res) => {
     console.log(req.body);
@@ -17,6 +20,8 @@ router.post('/add', (req, res) => {
 router.get('/getall', (req, res) => {
     model.find()
         .then((result) => {
+
+            
             res.status(200).json(result)
         }).catch((err) => {
             res.status(500).json(err)
@@ -61,5 +66,41 @@ router.delete('/delete/:id', (req, res) => {
             res.status(500).json(err)
         });
 });
+
+router.post('/authenticate',(req,res)=>{
+    model.findOne(req.body)
+
+    
+
+    .then((result) => {
+        if(!result){
+            return res.status(401).json({message:"login failed"});
+        }
+        
+        const {_id,name,email,password}=result
+        
+        const payload = {_id,name,email,password};
+
+        jwt.sign(
+            payload,
+            process.env.JWT_SECRET_KEY,
+            {
+                expiresIn:'1h'
+            },
+            (err,token)=>{
+                if(err){
+                    console.log(err);
+                    res.status(500).json(err)
+                }
+                else{
+                    res.status(200).json(token)
+                }
+            }
+        )
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).json(err)
+    });
+})
 
 module.exports = router;
