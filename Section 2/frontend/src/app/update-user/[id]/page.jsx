@@ -20,7 +20,16 @@ const updateUser = () => {
     fetchUser();
   }, [])
 
-  const submitForm = () => { }
+  const submitForm = async (values) => {
+    const res = await fetch('http://localhost:5500/user/update/' + id, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(values)
+    });
+    console.log(res.status);
+  }
 
   return (
     <div>
