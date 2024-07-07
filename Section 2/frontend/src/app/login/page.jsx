@@ -2,6 +2,7 @@
 import React from 'react'
 import classes from './login.module.css'
 import { useFormik } from 'formik'
+import toast from 'react-hot-toast'
 const Login = () => {
 
   const loginForm=useFormik({
@@ -9,10 +10,28 @@ const Login = () => {
       email:'',
       password:''
     },
-    onSubmit:(values)=>{
+    onSubmit:(values,{resetForm})=>{
       console.log(values);
+      fetch('http://localhost:5500/user/authenticate',{
+        method:'post',
+        headers:{
+          'content-Type':'application/json'
+        },
+        body:JSON.stringify(values)
+      })
+      .then((response) => {
+        if(response.status===200){
+          toast.success('Login successful');
+          resetForm();
+        }
+        else{
+          toast.error('Login failed');
+        }
+        
+      }).catch((err) => {
+          toast.error('Something went wrong');
+      });
 
-      
     }
   })
   return (
