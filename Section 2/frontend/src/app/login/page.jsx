@@ -27,11 +27,15 @@ const Login = () => {
         else{
           toast.error('Login failed');
         }
-        
-      }).catch((err) => {
+        return response.json()
+      }).then((result)=>{
+            console.log(result);
+            localStorage.setItem('token',result);
+            document.cookie=`token${result}`;
+      })
+      .catch((err) => {
           toast.error('Something went wrong');
       });
-
     }
   })
   return (
