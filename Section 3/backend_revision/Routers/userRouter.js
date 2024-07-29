@@ -69,14 +69,10 @@ router.delete('/delete/:id', (req, res) => {
 
 router.post('/authenticate',(req,res)=>{
     model.findOne(req.body)
-
-    
-
     .then((result) => {
         if(!result){
             return res.status(401).json({message:"login failed"});
-        }
-        
+        } 
         const {_id,name,email,password}=result
         
         const payload = {_id,name,email,password};
